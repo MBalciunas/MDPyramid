@@ -6,13 +6,13 @@ import java.util.Queue;
 public class BinaryTree {
 
     Node root;
-    int max = 0;
+    long max = 0;
 
-    public void add(int value) {
+    public void add(long value) {
         root = addRecursively(root, value);
     }
 
-    private Node addRecursively(Node current, int value) {
+    private Node addRecursively(Node current, long value) {
 
         Queue<Node> q = new LinkedList<>();
         if (current == null) {
@@ -52,7 +52,7 @@ public class BinaryTree {
         }
     }
 
-    public void getMax(Node node, int sum) {
+    public void getMax(Node node, long sum) {
         if (node == null) {
             if(sum > max) {
                 max = sum;
@@ -63,7 +63,7 @@ public class BinaryTree {
     }
 
 
-    private void getMaxByRules(Node node, int sum) {
+    private void getMaxByRules(Node node, long sum) {
         if (applyOddEvenRule(node, node.left)) {
             getMax(node.left, sum + node.value);
 

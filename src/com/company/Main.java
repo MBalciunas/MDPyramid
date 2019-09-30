@@ -14,7 +14,7 @@ public class Main {
 
         String content = Files.readString(Paths.get("src/com/company/pyramid"), StandardCharsets.US_ASCII);
         List<String> pyramid = Arrays.asList(content.split(" |\n"));
-        List<Integer> pyramidNum = pyramid.stream().map(Integer::parseInt).collect(Collectors.toList());
+        List<Long> pyramidNum = pyramid.stream().map(Long::parseLong).collect(Collectors.toList());
 
         BinaryTree binaryTree = new BinaryTree();
 
